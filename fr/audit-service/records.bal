@@ -28,4 +28,14 @@ type InternalAuditEvent record {|
     // Requested relative path - eg.: "Patient/example/_history/1"
     string entityWhatReference;
 
+    // ATNA ActiveParticipant — required for ITI-20 compliance
+    string agentUserId = "";           // @UserID — login name or service identifier
+    string agentAltUserId = "";        // @AlternativeUserID — process ID or secondary ID
+    int agentNetworkPointType = 2;     // @NetworkAccessPointTypeCode: 1=DNS, 2=IP
+    string agentNetworkPointId = "";   // @NetworkAccessPointID — IP or hostname of requestor
+
+    // ATNA PurposeOfUse (optional; included in XML only when non-empty)
+    string purposeOfEvent = "";
+    string purposeOfEventSystem = "http://terminology.hl7.org/CodeSystem/v3-ActReason";
+
 |};
