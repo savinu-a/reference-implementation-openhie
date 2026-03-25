@@ -1,6 +1,7 @@
-import ballerina_fhir_server.mappers;
-import ballerina_fhir_server.utils;
-import ballerina_fhir_server.utils as mapperUtils;
+import facility_registry.mappers;
+import facility_registry.utils;
+import facility_registry.utils as mapperUtils;
+import facility_registry.validation;
 
 import ballerina/log;
 import ballerina/sql;
@@ -20,6 +21,13 @@ public class CreateHandler {
 
     // Main function to save resource
     public isolated function saveResourceWithTransaction(string resourceType, json resourceJson) returns json|error {
+
+        // mCSD profile validation before any DB operations
+        validation:ValidationContext vCtx = {resourceType: resourceType, payload: resourceJson, operation: "create"};
+        validation:ValidationResult vResult = validation:runDefaultValidation(vCtx);
+        if !vResult.valid {
+            return error(string `[FHIR_VALIDATION] ${string:'join(", ", ...vResult.errors)}`);
+        }
 
         // Begin transaction
         utils:TransactionContext 'transaction = self.transactionHandler.beginTransaction();

@@ -1,4 +1,4 @@
-import ballerina_fhir_server.utils as mapperUtils;
+import facility_registry.utils as mapperUtils;
 
 import ballerina/log;
 import ballerina/time;

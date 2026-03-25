@@ -1,5 +1,6 @@
-import ballerina_fhir_server.mappers;
-import ballerina_fhir_server.utils;
+import facility_registry.mappers;
+import facility_registry.utils;
+import facility_registry.validation;
 
 import ballerina/log;
 import ballerina/sql;
@@ -20,6 +21,13 @@ public class UpdateHandler {
 
     // Main function for PUT (full update)
     public isolated function updateResourceWithTransaction(string resourceType, string resourceId, json resourceJson) returns string|error {
+
+        // mCSD profile validation before any DB operations
+        validation:ValidationContext vCtx = {resourceType: resourceType, payload: resourceJson, operation: "update"};
+        validation:ValidationResult vResult = validation:runDefaultValidation(vCtx);
+        if !vResult.valid {
+            return error(string `[FHIR_VALIDATION] ${string:'join(", ", ...vResult.errors)}`);
+        }
 
         // Begin transaction
         utils:TransactionContext 'transaction = self.transactionHandler.beginTransaction();

@@ -1,11 +1,10 @@
 [package]
-org = "ballerinax"
-name = "ballerina_fhir_server"
-version = "2.0.1"
+org = "wso2hc"
+name = "facility_registry"
+version = "1.0.0"
 distribution = "2201.12.11"
-authors = ["Ballerina"]
-keywords = ["Healthcare", "FHIR", "r4"]
-template = true
+authors = ["WSO2"]
+keywords = ["Healthcare", "FHIR", "r4", "mCSD", "FacilityRegistry"]
 
 [build-options]
 observabilityIncluded = true

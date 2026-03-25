@@ -24,10 +24,9 @@ import ballerinax/health.fhir.r4;
 public final r4:ResourceAPIConfig endpointApiConfig = {
     resourceType: "Endpoint",
     profiles: [
-        "http://hl7.org/fhir/StructureDefinition/Endpoint"
-
+        "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint"
     ],
-    defaultProfile: (),
+    defaultProfile: "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint",
     searchParameters: [
         {
             name: "connection-type",

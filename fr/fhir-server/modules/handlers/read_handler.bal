@@ -1,4 +1,4 @@
-import ballerina_fhir_server.mappers;
+import facility_registry.mappers;
 
 import ballerina/log;
 import ballerinax/health.fhir.r4;

@@ -24,10 +24,9 @@ import ballerinax/health.fhir.r4;
 public final r4:ResourceAPIConfig organizationaffiliationApiConfig = {
     resourceType: "OrganizationAffiliation",
     profiles: [
-        "http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation"
-
+        "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"
     ],
-    defaultProfile: (),
+    defaultProfile: "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation",
     searchParameters: [
         {
             name: "date",

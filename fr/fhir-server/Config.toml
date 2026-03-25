@@ -1,5 +1,5 @@
 # JDBC Database Configuration for db_handler module
-[ballerina_fhir_server.handlers]
+[facility_registry.handlers]
 dbType = "h2"
 dbUrl = "jdbc:h2:./data/fhir-db"
 dbUser = "sa"
@@ -7,17 +7,18 @@ dbPassword = ""
 clearDataOnStartup = false
 
 # Resource ID Generation Configuration
-[ballerina_fhir_server.utils]
+[facility_registry.utils]
 dbType = "h2"
 useServerGeneratedIds = true
 
-# Server Base URL Configuration for mappers module
-[ballerina_fhir_server.mappers]
-baseUrl = "http://localhost:9090"
+# Root module configuration (service.bal configurable variables)
+[facility_registry]
+serverName = "OpenHIE Facility Registry"
+auditServiceUrl = ""
+iti90Enabled = true
+iti91Enabled = true
+iti130Enabled = false
 
-# International Patient Summary (IPS) Configuration
-[ips]
-custodianOrganization = "Organization/default-hospital"
-authorPractitioner = "Practitioner/system"
-identifierSystem = "urn:oid:2.16.840.1.113883.2.4.6.3"
-documentTitle = "International Patient Summary"
+# Server Base URL Configuration for mappers module
+[facility_registry.mappers]
+baseUrl = "http://localhost:9090"

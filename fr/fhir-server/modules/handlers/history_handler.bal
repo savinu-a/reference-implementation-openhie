@@ -2,7 +2,7 @@ import ballerina/log;
 import ballerina/time;
 import ballerinax/java.jdbc;
 import ballerina/sql;
-import ballerina_fhir_server.utils;
+import facility_registry.utils;
 
 // Handler for managing resource version history
 public class HistoryHandler {

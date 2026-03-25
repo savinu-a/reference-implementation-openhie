@@ -24,10 +24,9 @@ import ballerinax/health.fhir.r4;
 public final r4:ResourceAPIConfig locationApiConfig = {
     resourceType: "Location",
     profiles: [
-        "http://hl7.org/fhir/StructureDefinition/Location"
-
+        "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"
     ],
-    defaultProfile: (),
+    defaultProfile: "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location",
     searchParameters: [
         {
             name: "partof",

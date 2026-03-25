@@ -24,10 +24,9 @@ import ballerinax/health.fhir.r4;
 public final r4:ResourceAPIConfig organizationApiConfig = {
     resourceType: "Organization",
     profiles: [
-        "http://hl7.org/fhir/StructureDefinition/Organization"
-
+        "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"
     ],
-    defaultProfile: (),
+    defaultProfile: "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization",
     searchParameters: [
         {
             name: "address-state",

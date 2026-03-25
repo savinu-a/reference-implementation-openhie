@@ -1,5 +1,5 @@
-import ballerina_fhir_server.utils;
-import ballerina_fhir_server.utils as mapperUtils;
+import facility_registry.utils;
+import facility_registry.utils as mapperUtils;
 
 import ballerina/lang.regexp;
 import ballerina/sql;

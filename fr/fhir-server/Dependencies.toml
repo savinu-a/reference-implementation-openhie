@@ -5,7 +5,7 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.13.1"
+distribution-version = "2201.12.10"
 
 [[package]]
 org = "ballerina"
@@ -68,7 +68,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "data.xmldata"
-version = "1.6.1"
+version = "1.6.2"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.object"}
@@ -83,9 +83,6 @@ dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "os"},
 	{org = "ballerina", name = "time"}
-]
-modules = [
-	{org = "ballerina", packageName = "file", moduleName = "file"}
 ]
 
 [[package]]
@@ -107,7 +104,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "http"
-version = "2.15.4"
+version = "2.14.9"
 dependencies = [
 	{org = "ballerina", name = "auth"},
 	{org = "ballerina", name = "cache"},
@@ -249,7 +246,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "log"
-version = "2.17.0"
+version = "2.14.0"
 dependencies = [
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "jballerina.java"},
@@ -274,7 +271,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "oauth2"
-version = "2.15.0"
+version = "2.14.1"
 dependencies = [
 	{org = "ballerina", name = "cache"},
 	{org = "ballerina", name = "crypto"},
@@ -287,7 +284,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "observe"
-version = "1.7.1"
+version = "1.6.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -316,7 +313,7 @@ modules = [
 [[package]]
 org = "ballerina"
 name = "sql"
-version = "1.18.0"
+version = "1.17.1"
 dependencies = [
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "jballerina.java"},
@@ -384,37 +381,6 @@ modules = [
 
 [[package]]
 org = "ballerinax"
-name = "ballerina_fhir_server"
-version = "2.0.1"
-dependencies = [
-	{org = "ballerina", name = "file"},
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "io"},
-	{org = "ballerina", name = "lang.regexp"},
-	{org = "ballerina", name = "log"},
-	{org = "ballerina", name = "regex"},
-	{org = "ballerina", name = "sql"},
-	{org = "ballerina", name = "time"},
-	{org = "ballerina", name = "uuid"},
-	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "health.fhir.r4"},
-	{org = "ballerinax", name = "health.fhir.r4.international401"},
-	{org = "ballerinax", name = "health.fhir.r4.parser"},
-	{org = "ballerinax", name = "health.fhir.r4.validator"},
-	{org = "ballerinax", name = "health.fhir.r4utils.fhirpath"},
-	{org = "ballerinax", name = "health.fhirr4"},
-	{org = "ballerinax", name = "java.jdbc"}
-]
-modules = [
-	{org = "ballerinax", packageName = "ballerina_fhir_server", moduleName = "ballerina_fhir_server"},
-	{org = "ballerinax", packageName = "ballerina_fhir_server", moduleName = "ballerina_fhir_server.handlers"},
-	{org = "ballerinax", packageName = "ballerina_fhir_server", moduleName = "ballerina_fhir_server.mappers"},
-	{org = "ballerinax", packageName = "ballerina_fhir_server", moduleName = "ballerina_fhir_server.r4_api_config"},
-	{org = "ballerinax", packageName = "ballerina_fhir_server", moduleName = "ballerina_fhir_server.utils"}
-]
-
-[[package]]
-org = "ballerinax"
 name = "health.base"
 version = "1.1.1"
 dependencies = [
@@ -430,7 +396,7 @@ dependencies = [
 [[package]]
 org = "ballerinax"
 name = "health.clients.fhir"
-version = "3.0.3"
+version = "3.0.5"
 dependencies = [
 	{org = "ballerina", name = "file"},
 	{org = "ballerina", name = "ftp"},
@@ -584,5 +550,36 @@ dependencies = [
 ]
 modules = [
 	{org = "ballerinax", packageName = "java.jdbc", moduleName = "java.jdbc"}
+]
+
+[[package]]
+org = "wso2hc"
+name = "facility_registry"
+version = "1.0.0"
+dependencies = [
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "lang.regexp"},
+	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "regex"},
+	{org = "ballerina", name = "sql"},
+	{org = "ballerina", name = "time"},
+	{org = "ballerina", name = "uuid"},
+	{org = "ballerinai", name = "observe"},
+	{org = "ballerinax", name = "health.fhir.r4"},
+	{org = "ballerinax", name = "health.fhir.r4.international401"},
+	{org = "ballerinax", name = "health.fhir.r4.parser"},
+	{org = "ballerinax", name = "health.fhir.r4.validator"},
+	{org = "ballerinax", name = "health.fhir.r4utils.fhirpath"},
+	{org = "ballerinax", name = "health.fhirr4"},
+	{org = "ballerinax", name = "java.jdbc"}
+]
+modules = [
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry"},
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry.handlers"},
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry.mappers"},
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry.r4_api_config"},
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry.utils"},
+	{org = "wso2hc", packageName = "facility_registry", moduleName = "facility_registry.validation"}
 ]
 

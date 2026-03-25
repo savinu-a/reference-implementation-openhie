@@ -1,4 +1,4 @@
-import ballerina_fhir_server.utils;
+import facility_registry.utils;
 import ballerinax/java.jdbc;
 import ballerina/sql;
 import ballerina/log;

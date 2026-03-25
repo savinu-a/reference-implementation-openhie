@@ -24,10 +24,9 @@ import ballerinax/health.fhir.r4;
 public final r4:ResourceAPIConfig healthcareserviceApiConfig = {
     resourceType: "HealthcareService",
     profiles: [
-        "http://hl7.org/fhir/StructureDefinition/HealthcareService"
-
+        "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService"
     ],
-    defaultProfile: (),
+    defaultProfile: "https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService",
     searchParameters: [
         {
             name: "organization",
